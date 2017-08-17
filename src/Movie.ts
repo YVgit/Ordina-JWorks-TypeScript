@@ -14,6 +14,8 @@ class Movie extends Item implements Rating{
     }
 
     render(element: HTMLElement):void {
+        console.log("Rendering movie");
+
         let article: HTMLElement = document.createElement("article");
         article.innerHTML =
             "<h3>" + this.title + "</h3>" +
@@ -22,4 +24,8 @@ class Movie extends Item implements Rating{
 
         element.appendChild(article);
     }
+
+    static fromJSON(JSON:any):Movie {
+        console.log("Parsing movie");
+        return new Movie(JSON.title,JSON.genre, JSON.description,JSON.age,JSON.name)}
 }

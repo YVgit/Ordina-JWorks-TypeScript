@@ -16,5 +16,12 @@
       "genre": "Horror",
       "description": "You found another fish didn't ya!"
     }
+  ],
+
+  "bananas": [
+    {
+      "angle": 33,
+      "brownness": "spotted"
+    }
   ]
 }
