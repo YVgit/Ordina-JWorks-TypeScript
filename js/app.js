@@ -8,13 +8,13 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-function publishItems(title, genre, description, articleArg) {
+function publishItems(title, genre, description, element) {
     var article = document.createElement("article");
     article.innerHTML =
         "<h3>" + title + "</h3>" +
             "<p>" + genre + "</p>" +
             "<span>" + description + "</span>";
-    document.getElementById("items").appendChild(article);
+    element.appendChild(article);
 }
 //publishItems("Matrix", "Thriller", "Did you know, Neo is the one?");
 //publishItems("Moby Dick", "Drama", "Is this fish for real?");
@@ -82,7 +82,7 @@ var Library = (function () {
         console.log("xxx");
         for (var _i = 0, _a = this.items; _i < _a.length; _i++) {
             var item = _a[_i];
-            item.render(null);
+            item.render(document.getElementById("items"));
         }
     };
     return Library;

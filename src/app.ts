@@ -1,4 +1,4 @@
-function publishItems(title: string, genre: string, description: string, articleArg: HTMLElement): void {
+function publishItems(title: string, genre: string, description: string, element: HTMLElement): void {
 
     let article: HTMLElement = document.createElement("article")
     article.innerHTML =
@@ -7,7 +7,7 @@ function publishItems(title: string, genre: string, description: string, article
         "<span>" + description + "</span>";
 
 
-    document.getElementById("items").appendChild(article);
+    element.appendChild(article);
 
 }
 
@@ -110,7 +110,7 @@ class Library {
 
     showAll() {console.log("xxx");
         for(let item of this.items) {
-            item.render(null);
+            item.render(document.getElementById("items"));
         }
     }
 }
